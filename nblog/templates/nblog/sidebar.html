@@ -1,0 +1,183 @@
+{% load static %}
+{% block sidebar %}
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="stylesheet" href="{% static 'css/side.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-5/5p5W+L8NdzC1GMd6hFz6TGyU6Dab/L6OJdzAmdLc41BZtfIjeiM08rE2MxYD9JxtVHkAcRogR7/E2zJt04Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+  /* Card styles */
+  .card {
+    box-shadow: 0 16px 48px #6a6a6b;
+    position: -webkit-sticky;
+  }
+
+  .im1{
+    margin: auto;
+    display: block;
+    margin-top: 40px;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    border: 3px solid #bef4f7;
+  }
+
+  .im11{
+    margin: auto;
+    display: block;
+    margin-top: 40px;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    border: 3px solid #bef4f7;
+    position: center;
+  }
+
+  .im11{
+    align-items: left;
+  }
+
+  .col-md-4.float-right {
+    float: right;
+    text-align: right;
+  }
+
+
+.layout-container {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  margin-right: 0px;
+}
+.image img {
+  max-width: 100%;
+}
+
+
+.aboutme {
+  flex: 1;
+}
+
+.follow-me {
+  display: flex;
+  align-items: center;
+}
+
+.follow-me p {
+  margin-right: 10px;
+}
+
+.fa {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+  .col-md-4.float-right {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .image {
+    margin-bottom: 20px;
+  }
+
+  .links-container {
+    font-size: 0.8em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  .follow-me p {
+    font-size: 0.8em;
+  }
+
+  .fa {
+    font-size: 24px;
+  }
+
+  .aboutme {
+    margin-top: 20px;
+  }
+}
+
+
+</style>
+
+
+<div class="col-md-4 float-right">
+  <h3 style="color: response;">Natural beauty. which is grateful in Cameroon.</h3>
+  <div class="image">
+    <img src="https://images.pexels.com/photos/257840/pexels-photo-257840.jpeg?cs=srgb&dl=agriculture-apple-blur-257840.jpg&fm=jpg" alt="" width="300" height="200">
+  </div>
+  <p class=" text-muted">{{ post.created_on }}</p>
+  <p class="card-text">{{post.content|slice:":300"|safe}}</p>
+  <a  href="{% url 'post_detail' post.pk  %}" class="btn btn-primary">Read More &rarr;</a>
+  <hr style="border: none; border-top: 2px solid darkgrey; width: 50%; margin: 20px auto;">
+  <div class="links-container">
+    <p style="text-align: center;">feature post</p>
+    <u><p><a href="" style="color: response;">Creative Process and Ways to Enhance Creativity</a></p></u>
+    <u><p><a href="" style="color: response;">What Is the Inspiration Behind Creativity?</a></p></u>
+    <u><p><a href="" style="color: response;">my Perspective on Art and it impact</a></p></u>
+    <u><p><a href="" style="color: response;">The Real Definition of the Word “Creativity”</a></p></u>
+  </div>
+
+  <hr style="border: none; border-top: 2px solid darkgray; width: 50%; margin: 20px auto;">
+
+  <h4 style="color: black;">more from newhatch-tech</h4>
+  {% if related_posts %}
+  <ul style="font-size: 1.2em; list-style: none;">
+    {% for related_post in related_posts %}
+    <li><a href="{{ related_post.get_absolute_url }}" style="color: response;">{{ related_post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+
+
+  <hr style="border: none; border-top: 2px solid darkgray; width: 50%; margin: 20px auto;">
+  <div class="layout-container">
+    <div class="image">
+      <img class="im11" src="{% static 'images/ransom.jpeg' length %}">
+    </div>
+    <div class="aboutme">
+      <h2>About Me</h2>
+      <p>Hi there! I am <b>Saahndong Ransom</b>(backend developer). I have published 100+ blog posts on lifestyle, mind, Catholic faith, Django, and other related topics. When I am not coding, I enjoy reading, hiking, and listening to Catholic hymns.</p>
+      <div class="follow-me">
+        <p>Follow me:</p>
+        <a href="https://twitter.com/SaahndongRansom"target="_blank" class="fa fa-twitter"></a>
+        <a href="https://web.facebook.com/saah.ransomm" target="_blank" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="https://www.linkedin.com/in/saahndong-ransom-7b3ba41b3/"target="_blank" class="fa fa-linkedin"></a>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+
+  </div>
+
+  </body>
+  </section>
+  </div>
+<hr>
+
+</div>
+
+
+
+{% endblock sidebar %}

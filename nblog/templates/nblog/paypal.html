@@ -1,0 +1,9 @@
+{% extends "nblog/base.html" %}
+{% block title %}Subscribe{% endblock %}
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ f }}
+        <input type="submit" value="Subscribe">
+    </form>
+{% endblock %}

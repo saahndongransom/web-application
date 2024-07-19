@@ -1,0 +1,32 @@
+.social-media {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .social-media li {
+    margin-right: 1rem;
+  }
+  
+  .social-media a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-media a:hover {
+    color: #333;
+  }
+  
+  .social-media i {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+  
+  .social-media span {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  

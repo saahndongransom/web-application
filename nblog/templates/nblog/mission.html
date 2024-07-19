@@ -1,0 +1,341 @@
+{% block content %}
+{% load static %}
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet"  href="{%  static  'css/mission.css'  %}">
+
+
+	<!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- JavaScript and jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+    <style>
+        #navbarResponsive {
+            justify-content: flex-end !important;
+        }
+
+        .navbar-dark {
+            background-color: black !important;
+        }
+
+        .navbar-nav {
+            margin: 0 auto !important;
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        .nav-item {
+            margin-left: 70px !important;
+        }
+
+        .nav-link {
+            display: inline-block !important;
+            color: white !important;
+        }
+    </style>
+
+
+</head>
+<body>
+	
+
+	  
+	
+	  <!-- Navigation -->
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="mainNav">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{% url 'home' %}">🌐 TRILLUMIZE TECH 🌐</a> 
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'home' %}">
+							home
+						</a>
+					</li>
+					<!--
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'mission' %}">About us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'mission' %}">mission</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'contact' %}">Contact</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'policy' %}">Policy</a> 
+					</li>   
+					-->
+					<li class="nav-item">
+						<a  class="nav-link" href="{% url 'policy' %}">JOIN Trillumize</a> 
+					</li>        
+					
+				</ul>
+				
+			</div> 
+		</div>
+	</nav>
+	
+	<br>
+	<br>
+<div>
+	<section class="hero">
+		<h2>Welcome to Trillumize Community</h2>
+		<p> Welcome to Trillumize Community We are a diverse and passionate group of individuals who use technology to make a positive impact in the world. Join us and be a part of something bigger than yourself.</p>
+	  </section>  
+</div>
+
+	  <div class="slideshow">
+		<div class="slide mission">
+			<h2>Mission</h2>
+			<p>At Trillumize most pressing problems. We empower individuals and businesses with innovative and cutting-edge solutions that promote progress and positive change.
+ forefront of this movement, and we invite you to join us on this journey towards progress and positive change.</p>
+		</div>
+		<div class="slide vision">
+			<h2>Vision</h2>
+			<p>Our vision is to build a vibrant and diverse community that is passionate about making a difference in the world. We strive to create a culture of inclusivity, collaboration, and excellence, where everyone is empowered to use technology to create positive change. Through our work, we hope to inspire and encourage individuals to push the boundaries of what is possible and make a lasting impact on society.</p>
+		</div>
+		<div class="slide goal">
+			<h2>Goal</h2>
+			<p>Our goal at Trillumize Tech is to create innovative and cutting-edge solutions that address the most pressing issues facing society today. We aim to empower individuals and businesses with the tools they need to make a positive impact on the world and drive progress and positive change.</p>
+		</div>
+	</div>
+	
+	  
+	<br>
+	<div class="card-box">
+		<p>Join the Movement</p>
+	  </div><br>
+	  <section class="benefits-section">
+		<h2>BENEFITS OF COMPLIMENTARY MEMBERSHIP</h2>
+		<div class="benefits-container">
+		  <div class="benefit">
+			<i class="fa fa-star"></i>
+			<h3>Exclusive Rewards</h3>
+			<p>As a member, you'll have access to exclusive rewards and benefits that are not available to non-members.</p>
+		  </div>
+		  <div class="benefit">
+			<i class="fa fa-gift"></i>
+			<h3>Birthday Gifts</h3>
+			<p>Get a special birthday gift from us every year to celebrate your special day.</p>
+		  </div>
+		  <div class="benefit">
+			<i class="fa fa-comments"></i>
+			<h3>Personalized Support</h3>
+			<p>Our dedicated support team is always available to provide personalized assistance and support to our members.</p>
+		  </div>
+		  <div class="benefit">
+			<i class="fa fa-book"></i>
+			<h3>Free Resources</h3>
+			<p>Access our library of free resources and materials to help you on your journey to success.</p>
+		  </div>
+		</div>
+	  </section>
+	
+		
+	  <section class="ransom">
+		<h2 style="text-align:center;">Our Community Encompasses All Technology Disciplines</h2>
+		<p style="text-align:center;">We believe in using technology to make a positive impact in our world. Our community covers a wide range of disciplines, including:</p>
+		<div class="slider-container" style="text-align:center;">
+			<ul class="slider-list" id="slider">
+
+				<li>Climate change</li>
+				<li>Social life</li>
+				<li>Agriculture</li>
+				<li>Inner engineering</li>
+			</ul>
+		</div>
+		<p style="text-align:center;">Here are some examples of the work our community is doing:</p>
+	</section>
+		<div class="projects" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+			<div class="project" style="margin: 20px; text-align: center; max-width: 300px;">
+			  <h3>Climate Change</h3>
+			  <img src="{% static 'images/images.jpg' length %}" alt="Climate Change" style="max-width: 100%; height: auto;">
+			  <p>Our community is using technology to monitor and mitigate the effects of climate change. We're developing new tools to measure carbon emissions, track weather patterns, and create more sustainable energy sources.</p>
+			</div>
+			<div class="project" style="margin: 20px; text-align: center; max-width: 300px;">
+			  <h3>Social Life</h3>
+			  <img src="{% static 'images/022818-73-Sociology-Socialization.jpg' length %}" alt="Social Life" style="max-width: 100%; height: auto;">
+			  <p>We're exploring how technology can improve social interactions and create stronger communities. From social media to virtual reality, our community is working to connect people and promote positive relationships.</p>
+			</div>
+			<div class="project" style="margin: 20px; text-align: center; max-width: 300px;">
+			  <h3>Agriculture</h3>
+			  <img src="{% static 'images/RS2085_food-agriculture-topic.jpg' length %}">
+			  <p>Our community is using technology to revolutionize farming and food production. We're developing new sensors and monitoring systems to optimize crop growth, reduce waste, and create more sustainable agricultural practices.</p>
+			</div>
+			<div class="project" style="margin: 20px; text-align: center; max-width: 300px;">
+			  <h3>Inner Engineering</h3>
+			  <img src="{% static 'images/keegan-houser-q_t4scn8c4-unsplash.jpg' length %}" alt="Inner Engineering" style="max-width: 100%; height: auto;">
+			  <p>We're exploring how technology can improve mental and physical health. From meditation apps to biofeedback sensors, our community is developing new tools to promote mindfulness, stress reduction, and overall well-being.</p>
+			</div>
+		  </div>
+		  <section class="udicia" style="width: 100%; height: 600px; overflow: hidden;">
+			<div class="slideshow-container" style="width: 100%; height: 100%;">
+				<img class="mySlides" src="{% static 'images/best.png' length %}" style="width:100%; height: 100%;">
+				<img class="mySlides" src="{% static 'images/RS2085_food-agriculture-topic.jpg' length %}" style="width:100%; height: 100%;">
+				<img class="mySlides" src="{% static 'images/42795GettyImages-1049270616.jpg' length %}" style="width:100%; height: 100%;">
+				<img class="mySlides" src="{% static 'images/Africa-Tech-boom-data-privacy-China-surveillance-Africa-technology-policy.jpg' length %}" style="width:100%; height: 100%;">
+				<img class="mySlides" src="{% static 'images/download.jpeg' length %}" style="width:100%; height: 100%;">
+				<img class="mySlides" src="https://foundation.blacksintechnology.net/wp-content/uploads/2020/08/42700883892478.jpg" style="width:100%; height: 100%;">
+				<img class="mySlides" src="https://tbcdn.talentbrew.com/company/1732/4998/content/capital-one-BIT-Deep-Dive-banner%20v2.jpg" style="width:100%; height: 100%;">
+				<img class="mySlides" src="{% static 'images/black_girls_code_tech_organization.jpg' length %}" style="width:100%; height: 100%;">
+				
+			
+			</div>
+		</section>
+		
+		  
+		 
+
+		  <section>
+		
+			<footer>
+				<div class="stay-updated">
+				  <h3>Stay Updated</h3>
+				  <p>Subscribe to Trillumize News & Events updates by entering your email below:</p>
+				  <form action="#" method="POST">
+					{% csrf_token %}
+					<div class="form-group">
+					  <label for="email">Email:</label>
+					  <input type="email" id="email" name="email" required>
+					  <button type="submit">Subscribe</button>
+					</div>
+				  </form>
+				  <p>We respect your privacy and will never sell your information to a third party.</p>
+				</div>
+			  
+				<div class="social-links">
+				  <div class="logo">
+					<img src="{% static 'images/abc.png' length %}" alt="Bit News & Events Logo">
+					<h3>Trillumize News &amp; Events</h3>
+				  </div>
+				  <div class="social-icons">
+					<ul>
+					  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+					  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+					  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+					  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					  <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+				  </div>
+				  <div class="footer-links">
+					<ul>
+					  <li><a href="#">About Us</a></li>
+					  <li><a href="#">Blog</a></li>
+					  <li><a href="#">Membership</a></li>
+					  <li><a href="#">Member Login</a></li>
+					</ul>
+				  </div>
+				</div>
+			  
+				<div class="last-section">
+				  <p>© 2022-2023 THE TRILLUMIZE-TECH COMMUNITY</p>
+				</div>
+			  </footer>
+			  
+ 
+
+	<script src="sty.js"></script>
+	
+
+
+	<script>
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+</script>
+<script src="{% static 'js/sty.js' %}"></script>
+</body>
+<!-- Styles for the popup -->
+<style>
+  /* Your existing styles here */
+  #newsletter-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #fff;
+    padding: 40px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    display: none;
+  }
+
+  /* Styles for the close button */
+  .close-button {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+</style>
+
+<!-- Your existing HTML code for the popup -->
+<div id="newsletter-popup">
+  <!-- The close button will always be visible, but the popup content will be hidden until triggered. -->
+  <button class="close-button" onclick="closeFormPopup()">&times;</button>
+  <h3 class="mb-4 font-weight-bold">Subscribe to our Newsletter</h3>
+  <form action="{% url 'subscribe_newsletter' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success">Subscribe</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function closeFormPopup() {
+    document.getElementById('newsletter-popup').style.display = 'none';
+  }
+
+  function showPopup() {
+    // Show the form popup
+    document.getElementById('newsletter-popup').style.display = 'block';
+  }
+
+  // Show the popup initially after 5 seconds
+  setTimeout(showPopup, 5000); // 5 seconds in milliseconds
+
+  // Call the showPopup function every 1 minute (60 seconds)
+  setInterval(showPopup, 60000); // 1 minute in milliseconds
+</script>
+</html>
+
+{% endblock content %}

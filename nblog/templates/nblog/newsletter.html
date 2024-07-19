@@ -1,0 +1,16 @@
+{% extends "nblog/base.html" %}
+
+{% block content %}
+
+
+    <div class="content-section">
+        <form  style="width: 100%;" method="POST">
+            {% csrf_token %}
+            {{ form  }}
+            {{ form.media  }}
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

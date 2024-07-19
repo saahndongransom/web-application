@@ -1,0 +1,17 @@
+.pagination-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: larger;
+    color:red;
+    size: 40%;
+  }
+  
+  .pagination-label {
+    margin: 0;
+  }
+  
+    
+  

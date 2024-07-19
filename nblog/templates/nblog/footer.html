@@ -1,0 +1,252 @@
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/foo.css' %}">
+<style>
+  /* Your existing styles here */
+
+  /* New styles for the footer */
+  footer {
+    background-color: #36454F;
+    color: #fff;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-bottom: 50px;
+  }
+
+  .footer-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .footer-description {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 30px;
+  }
+
+  .subscribe-form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+  }
+
+  .email-input {
+    min-width: 250px !important; /* Set a minimum width for the input field */
+    border: none;
+    border-radius: 4px 0 0 4px;
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+    /* Match button height */
+    line-height: 20px;
+  }
+
+  .subscribe-button {
+    flex: 0;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    background-color: #0d6efd;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Match input height */
+    line-height: 15px;
+  }
+
+  .subscribe-button:hover {
+    background-color: #0b5ed7;
+  }
+
+  .contact-info {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .social-media-icons li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  .social-media-icons i {
+    font-size: 24px;
+  }
+
+  .facebook {
+    color: #3b5998;
+  }
+
+  .twitter {
+    color: #1da1f2;
+  }
+
+  .linkedin {
+    color: #0077b5;
+  }
+
+  .youtube {
+    color: #c4302b;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  /* Add new style for the space between sections */
+  .space-between {
+    margin-top: 15px; /* Adjust this value as needed */
+    margin-left: 70px; /* Adjust this value for right space */
+  }
+  
+</style>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">Help and Support</h3>
+        <ul class="list-unstyled">
+          <li><a href="#" style="color: #fff;">FAQs</a></li>
+          <li><a href="#" style="color: #fff;">Contact Us</a></li>
+          <li><a href="#" style="color: #fff;">Terms of Service</a></li>
+          <li><a href="#" style="color: #fff;">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-title">Subscribe to our Newsletter</h3>
+        <p class="footer-description">Stay up-to-date with the latest news, updates, and offers.</p>
+        <form action="{% url 'subscribe_newsletter' %}" method="post" class="subscribe-form">
+          {% csrf_token %}
+          <div class="input-group mb-3">
+            <input id="email" name="email" type="email" class="form-control email-input" placeholder="Enter your email" required>
+           <br>
+            <button type="submit" class="btn btn-success subscribe-button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+      <div class="footer-section space-between">
+        <h3 class="footer-title">Follow Us</h3>
+        <ul class="list-unstyled social-media-icons">
+          <li>
+            <a href="https://web.facebook.com/saah.ransomm" target="_blank" class="facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/SaahndongRansom" target="_blank" class="twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/saahndong-ransom-7b3ba41b3/" target="_blank" class="linkedin">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="youtube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-title">Connect with Us</h3>
+        <p class="contact-info" style="color: #fff;">
+          Email: trillumize@gmail.com
+          <br>
+          Phone: 605-047-3572
+          <br>
+          mile18 Buea
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2023 Trillumize.com. All Rights Reserved. | Designed by Trillumize
+  </div>
+</footer>
+</style>
+<!-- Styles for the popup -->
+<style>
+  /* Your existing styles here */
+  #newsletter-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #fff;
+    padding: 40px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    display: none;
+  }
+
+  /* Styles for the close button */
+  .close-button {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+</style>
+
+<!-- Your existing HTML code for the popup -->
+<div id="newsletter-popup">
+  <!-- The close button will always be visible, but the popup content will be hidden until triggered. -->
+  <button class="close-button" onclick="closeFormPopup()">&times;</button>
+  <h3 class="mb-4 font-weight-bold">Subscribe to our Newsletter</h3>
+  <form action="{% url 'subscribe_newsletter' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success">Subscribe</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function closeFormPopup() {
+    document.getElementById('newsletter-popup').style.display = 'none';
+  }
+
+  function showPopup() {
+    // Show the form popup
+    document.getElementById('newsletter-popup').style.display = 'block';
+  }
+
+  // Show the popup initially after 5 seconds
+  setTimeout(showPopup, 5000); // 5 seconds in milliseconds
+
+  // Call the showPopup function every 1 minute (60 seconds)
+  setInterval(showPopup, 60000); // 1 minute in milliseconds
+</script>
+{% endblock content %}

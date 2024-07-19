@@ -1,0 +1,302 @@
+{% extends "nblog/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet"  href="{% static 'css/page.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700" rel="stylesheet">
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=YOUR-PUBLISHER-ID"></script>
+<!-- Add this to the <head> section of your HTML file -->
+  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=[YOUR-SHARETHIS-PROPERTY-ID]&product=inline-share-buttons"></script>
+
+
+<style>
+
+.body {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .single_content:hover .card-body {
+    background-color: #f7f7f7;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  .single_content {
+    border: 1px solid #ddd;
+  }
+  .layout-container {
+    display: grid;
+    grid-template-columns: auto 20%;
+    grid-column-gap: 20px;
+    background-color: #f7f7f7;
+  }
+
+  .layout-container {
+    display: grid;
+    grid-template-columns: auto 15%;
+    /*grid-template-columns: auto 300px;*/
+    grid-column-gap: 10px;
+    background-color: darkgrey;
+  }
+
+  .card-body {
+    position: relative;
+  }
+
+  .card-body a.btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  .content-container {
+  background-image: url("https://foundation.blacksintechnology.net/wp-content/uploads/2020/08/42700883892478.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  background-image: url("https://images.unsplash.com/photo-1516617442634-75371039cb3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+</style>
+
+<header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-15 mx-auto">
+        <div class="site-heading1"></div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+    </div>
+  </div>
+  <div class="row">
+    {% for post in posts %}
+    <div class="col-md-4 mt-3">
+      <div class="card mb-4 single_content h-100">
+        <div class="card-body">
+          {% if post.image %}
+          <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid mb-3" style="width: 100%;">
+          </a>
+          {% elif post.image_url %}
+          <a href="{% url 'post_detail' post.slug %}">
+            <img src="{{ post.image_url }}" alt="{{ post.title }}" class="img-fluid mb-3" style="width: 100%;">
+          </a>
+          {% endif %}
+          <h4 class="card-title">{{ post.title }}</h4>
+          <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+          <p class="card-text">{{post.content|slice:":300"|safe}}</p>
+          <a  href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+
+          </div>
+          </div>
+          </div>
+          {% endfor %}
+          </div>
+          </div>
+
+<br>
+
+  
+    <style>
+      /* Styles for slide buttons */
+      .slide-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 30px;
+          color: white;
+          cursor: pointer;
+          z-index: 1;
+      }
+  
+      .prev {
+          left: 20px;
+      }
+  
+      .next {
+          right: 20px;
+      }
+  
+      /* Add custom styles for the slideshow */
+      #post-slideshow {
+          position: relative;
+          margin-bottom: 20px; /* Add some spacing at the bottom */
+          width: 100%; /* Set the width to 100% to cover the entire available width */
+          overflow: hidden; /* Hide horizontal overflow */
+      }
+  
+      .post-slide {
+          height: 60vh; /* Set the height to 100vh to cover the entire viewport height */
+          display: none;
+          align-items: center;
+          justify-content: center;
+          color: black;
+          text-align: center;
+          background-size: cover;
+          background-position: center;
+      }
+  
+      .post-slide.active {
+          display: flex;
+      }
+  
+      .post-slide h2 {
+          font-size: 30px;
+          font-weight: bold;
+          margin-bottom: 1px;
+          color: black;
+      }
+  
+      .post-slide p {
+          font-size: 30px;
+          color: black;
+          margin-top: 0;
+          margin-bottom: 2px;
+      }
+  
+      /* Add custom styles for category count */
+      .category-count {
+          color: #999;
+          font-size: 20px;
+          margin-left: 5px;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-color: black;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 20px;
+      }
+  
+      /* Add custom styles for categories */
+      .list-inline-item a {
+          font-size: 25px;
+          color: aliceblue;
+      }
+  
+      /* Add spacing for the category box */
+      .category-box {
+          margin-bottom: 20px;
+      }
+  
+      /* Responsive styles */
+      @media (max-width: 768px) {
+          .post-slide h2 {
+              font-size: 24px;
+          }
+  
+          .post-slide p {
+              font-size: 20px;
+          }
+  
+          .list-inline-item a {
+              font-size: 20px;
+          }
+  
+          .category-box {
+              margin-bottom: 0;
+          }
+      }
+  </style>
+  
+  <body>
+      {% if not is_post_detail %}
+      <div id="post-slideshow">
+          {% for post in featured_posts %}
+          <div class="post-slide" style="background-image: url('{{ post.image_url }}');">
+              <br>
+              <h2>{{ post.title }}</h2>
+              <p>{{ post.content|truncatewords:30|safe }}</p>
+              <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More</a>
+          </div>
+          {% endfor %}
+  
+          <a class="slide-btn prev" onclick="changeSlide(-1)">&#10094;</a>
+          <a class="slide-btn next" onclick="changeSlide(1)">&#10095;</a>
+      </div>
+      {% endif %}
+ <!--
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      {% if page_obj.has_previous %}
+      <nav class="pagination-nav">
+        <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">
+          <span class="pagination-icon">&laquo;</span>
+          <h2 class="pagination-label">Previous </h2>
+        </a>
+      </nav>
+      {% endif %}
+
+      {% if page_obj.has_next %}
+      <nav class="pagination-nav">
+        <a href="?page={{ page_obj.next_page_number }}" class="pagination-link">
+          <h2 class="pagination-label">Next </h2>
+          <span class="pagination-icon">&raquo;</span>
+        </a>
+
+      </nav>
+
+
+      {% endif %}-->
+     <style>
+        .container1 {
+          width: 20%; /* Adjust the width as needed */
+          margin: 0 auto; /* Center the container horizontally */
+          padding: 20px;
+          background-color: #f0f0f0;
+        }
+        .pagination-link {
+    display: flex;
+    align-items: center;
+    
+    color: #333;
+    text-decoration: none;
+    
+    
+    border-radius: 3px;
+    font-size: 30px; /* Adjust the font size as needed */
+  }
+      
+        /* Rest of the CSS styles... */
+      </style>
+      
+      <div class="container1">
+        <div class="card1">
+          <div class="card-body1">
+            {% if page_obj.has_previous %}
+            <nav class="pagination-nav1">
+              <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">
+                <span class="pagination-icon bi bi-chevron-left"></span>
+                <span class="pagination-label">Previous</span>
+              </a>
+            </nav>
+            {% endif %}
+      
+            {% if page_obj.has_next %}
+            <nav class="pagination-nav">
+              <a href="?page={{ page_obj.next_page_number }}" class="pagination-link">
+                <span class="pagination-label1">Next</span>
+                <span class="pagination-icon bi bi-chevron-right"></span>
+              </a>
+            </nav>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+<br>
+
+{% endblock content %}

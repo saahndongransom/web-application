@@ -1,0 +1,347 @@
+{% extends 'nblog/base.html' %}
+{% load static %}
+{% load social_share %}
+{% load crispy_forms_tags %}
+{% load %}
+{% load widget_tweaks %}
+{% load related_posts %}
+{% load custom_filters %}
+
+{% block content %}
+<link rel="stylesheet"  href="{%  static  'css/anna.css'  %}">
+     <link rel="stylesheet" href="anna.css" />
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+     {% block slide_section %}
+     {% endblock slide_section %}
+     <head>
+      <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <style>
+        .related-posts {
+  font-size: 1.2em;
+  margin-top: 2em;
+}
+
+.related-posts__title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.related-posts__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.related-posts__item {
+  margin-bottom
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.card-text {
+  font-size: 40px;
+  font-family: Arial, sans-serif;
+}
+
+
+
+      </style>
+     
+
+
+
+     </head>
+
+
+
+     
+
+     
+     
+     
+     
+     
+  
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h1 style="color:#36454F  ;">{% block title %} {{ post.title }} {% endblock title %}</h1>
+        <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
+        <p  class="card-text ">{{ post.content | safe }}</p>
+
+
+
+        tags:
+        {% for tag in post.tag.all %}
+
+        <a href="{{ tag.get_post_tag_url }}">
+            {{ tag.name }}
+        </a>
+        <ul>
+          {% for tag in tag_list %}
+              <li><a href="/tags/{{ tag.slug }}/">{{ tag.name }}</a></li>
+          {% endfor %}
+          </ul>
+
+       {% endfor %}
+       {% for post in posts %}
+  <a href="{% url 'post_detail' post.slug %}">
+
+  </a>
+{% endfor %}
+      <br>
+      <div class="text-center">
+        <a href="#" data-toggle="modal" data-target="#subscribeModal" style="color: red;">Subscribe to our Newsletter</a>
+      </div>
+
+
+
+
+<!--{% if tag %}
+<h2>Post tagged with  "{{tag.name}}"</h2>
+{% endif %}-->
+
+        <div class="Tags gap-xy-2 text-center mt-6 ">
+            {% for cat in post.categories.all %} [:3]
+            <a href="# " class="badge badge-pill badge-secondry "> {{cat}}</a> {% endfor %}
+        </div>
+
+
+
+        <!--Start somilar posts-->
+       <!--Start somilar posts-->
+       <div class="row mt-5">
+        <div class="col-12 text-center">
+
+        </div>
+    </div>
+
+    <div class="row">
+
+       {% for post in similar_posts %}
+        <div class="col-lg-4 col-md-6 col-sl-12 p-3">
+            <div class="border rounded">
+                <small class="text-primary mt-2 p-4">{{post.title}}</small>
+                <p class="p-4">{{post.overview|safe|slice:":150"}}<b>[...]</b></p>
+                <a href="{{post.post_link}}" class="p-4">Read More <i class="mdi mdi-cheveron-right"></i> </a>
+                <div class="border-top p-3 mt-3 d-flex">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt=""
+                        style="max-width:50px;max-height:50px;" class="rounded-pill img-fluid mr-3">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <h6>{{post.author.user.username|title}}</h6>
+                        </div>
+                        <div class="form-group ml-5">
+                            <small>{{post.date|date}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+
+        {% related_posts post.id as related_posts %}
+{% if related_posts %}
+  <h2 style="color: darkred;">RELATED POSTS</h2>
+  <ul style="font-size: 1.2em;">
+    {% for related_post in related_posts %}
+      <li><a href="{{ related_post.get_absolute_url }}">{{ related_post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+        </div>
+
+
+
+
+             <h1>
+            <ol style="background-color:wheat ;text-align:center;text-decoration;hover:" >
+                {% post_to_facebook object_or_url "Post to Facebook!" %}
+                {% post_to_whatsapp  object_or_url "Share To whatsapp" %}
+                 {% post_to_reddit  object_or_url "Share To Reddit" %}
+
+            </ol>
+
+             </h1>
+
+<div class="boxed">
+   <h4> <a style="color:white;font: size 35px;;" href="{% url 'home' %}"> All post</a></h4>
+  </div>
+
+
+<div>
+
+
+
+</div>
+
+    <div class="post">
+      <h1>{{ post.title }}</h1>
+      <p class="date">{{ post.published_date }}</p>
+      {{ post.text|linebreaks }}
+    </div>
+    <hr>
+
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Comments</h3>
+        {% for comment in comments %}
+          <div class="comment">
+            <p class="info"><i class="fas fa-comment"></i> {{ comment.name }} commented on {{ comment.created_date }}</p>
+            <p>{{ comment.text|linebreaks }}</p>
+          </div>
+        {% empty %}
+          <p>No comments yet. Be the first to comment!</p>
+        {% endfor %}
+        <hr>
+        <h3 class="card-title">Leave a comment</h3>
+        <form method="post" class="comment-form">
+          {% csrf_token %}
+
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="text">Comment:</label>
+            <textarea name="text" id="text" cols="50" rows="5" class="form-control" required></textarea>
+          </div>
+
+          <input type="submit" value="Add comment" class="btn btn-primary">
+        </form>
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+
+
+
+
+      </div>
+  </div>
+  
+  {% block sidebar %} {% include 'nblog/sidebar.html' %} {% endblock sidebar %}
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="subscribeModalLabel">Subscribe to our Newsletter</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Stay up-to-date with the latest news, updates and offers.</p>
+        <form action="{% url 'subscribe_newsletter' %}" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <button type="submit" class="btn btn-success btn-block">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #newsletter-popup {
+    /* Your existing styles here */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #fff;
+    padding: 40px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    display: none;
+  }
+
+  /* Styles for the close button */
+  .close-button {
+    /* Your existing styles here */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  
+  }
+</style>
+
+<!-- Your existing HTML code for the popup -->
+<div id="newsletter-popup">
+  <!-- The close button will always be visible, but the popup content will be hidden until triggered. -->
+  <button class="close-button" onclick="closeFormPopup()">&times;</button>
+  <h3 class="mb-4 font-weight-bold">Subscribe to our Newsletter</h3>
+  <form action="{% url 'subscribe_newsletter' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success">Subscribe</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function closeFormPopup() {
+    document.getElementById('newsletter-popup').style.display = 'none';
+  }
+
+  function showPopup() {
+    // Show the form popup
+    document.getElementById('newsletter-popup').style.display = 'block';
+
+    // Hide the popup after 5 seconds
+    setTimeout(function() {
+      document.getElementById('newsletter-popup').style.display = 'none';
+    }, 5000); // 5 seconds in milliseconds
+  }
+
+  // Show the popup initially after 5 seconds
+  setTimeout(showPopup, 5000); // 5 seconds in milliseconds
+
+  // Call the showPopup function every 1 minute (60 seconds)
+  setInterval(showPopup, 60000); // 1 minute in milliseconds
+</script>
+
+{% endblock content %}

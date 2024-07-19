@@ -1,0 +1,109 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+
+	  
+    <title>about me </title>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="{%  static  'css/feli.css'  %}">
+     <link rel="stylesheet" href="feli.css" />
+      <script src="https://kit.fontawesome.com/1cf483120b.js" crossorigin="anonymous"></script>
+    	<script src="{% static 'myfirst.js' %}"></script>
+</head>
+
+<body style="background-image: url('{%static 'images/f1.jpg' %}');">
+
+    <div class="section">
+    	<div class="hero">
+        <a class="nav-link text-black font-weight-bold" href="{% url 'home' %}"><i class="fa fa-home" style="font-size:40px"></i></a>
+    		<article>
+          <a class="nav-link text-black font-weight-bold" href="{% url 'home' %}"><i  class="fa " style="font-size:24px"></i></a>
+    			<h1>About me</h1>
+    		
+
+
+<button onclick="myFunction()">Click me!</button>
+
+<p>In myfirst.js you can see the myFunction function.</p>
+				<div class="image">
+					<img src="{% static 'images/ransom.jpeg' length %}">
+				</div><!-- end image-->
+    			<content>
+    				
+ <h5>Introduction</h5>
+    <p>Hello! My name is Saahndong  Nwonze Ransom, and I'm a <strong>python programmer</strong> and <strong>Back end dev,</strong> student <a href="http://ubuea.cm/">university of buea</a> Cameroon.</p>>
+    
+    <p>I think it's important to help make the internet a <strong>  secure & beautiful place for All </strong>, whether that be through words, photography, or web design, and I'm excited to have found a community at <a href="newhatchtech.html">Newhach-tech</a> that shares my belief.</p>
+    
+    <p>I also think it's important to push yourself and <strong>learn</strong> one new thing every day, no matter what that may be. Did you know a duel between three people is called a <a href="http://www.futilitycloset.com/wp-content/uploads/2010/12/2010-12-16-truel.jpg">truel?</a> that why i started a blogger to share my little knownlade i learn everyday</p>
+					<h3>my skills</h3>
+					<p>Web Development</p>
+          <p>Phone repaire</p>
+					<p>Design process</p>
+                    <p>Analytical skills</p>
+                    <p>python/django</p>
+					<p>Teamwork</p>
+                    <p>Wordpress</p>						
+					
+				
+
+
+    			</content>
+
+    <div class="container">
+    <h5 style="color: #fcba03;">Where I'm From</h5>
+    <p>I call <a href="https://en.wikipedia.org/wiki/Mmuock_Leteh">M'muock leteh</a> my home, the land of Potatos (lebialem south west region, Cameroon!). My favorite part about <b>M'muock leteh</b> is that we're a village built around a large <a href="https://en.wikipedia.org/wiki/Mmuock_Leteh">hill characterised by mountain peaks steep rolling and pyramidal hills separated by very incised river valleys and ravines.</a>. and  vibrant crowd  that keeps this village bold and <strong>progressive</strong>. 
+    
+    It is often helpful to connect your emotions to what you are describing. <a href="https://en.wikipedia.org/wiki/Mmuock_Leteh#/media/File:Mmuock_Leteh_collage.jpg">Take long walks</a> Mmuock a place to be.
+      
+    <p>You can find me in the city, <strong>Buea</strong> in mile 18, documenting the stories around me, or in little cafe's writing about my daily <a href="http:">adventures</a> and the people I meet.</p>
+    </div>
+  </section>
+
+  <section class="questions-section">
+    <div class="container">
+    <h5>More About Me</h5>
+    <p>I'm highly energetic and motivated person and I love to work as a member or a leader of a team. I especially enjoy working with changing projects and taking them forward with rapid pace but high precision. I am calm  and non-sociable but  very friendly and diligent while concentrating on detailed work like programming or designing.</p>
+    <h5>my  favorite hobbies?</h5>
+    </p>
+    <p>I love to explore new cities, clime mountain, drink coffe, researching, bike to big lakes, hold hands, play video games, dance in hay lofts, spend weekends indoor coding, drink coffe <a href="http://www.pof66.com/whiskey/eagle-rare-10yr-bourbon.html">R</a>, and sit indoor  all night on my computer writing computer code.</h2>
+
+    <h5>What's your dream job?</h5>
+    <p>A professional  cook. Just kidding, I would love to be a full-time <strong>security  administrative</strong> who's given an array of responsibilities in comanpany, bloger, CEO , and whatever else comes my way.</p>
+
+    <h5>What music have you been listening to lately?</h5>
+    <p>I  love listenin<a href="{% url 'newsletter' %}">g</a>  Catholic Gospel   <a href="https://www.youtube.com/watch?v=3qWaru5fu-M">CAMEROON HYMM</a>.  and Naira marley I don't know what it is about naira marley songs , but they make me want to keep driving and driving. Start with the song <a href="https://www.youtube.com/results?search_query=naira+marley+compilation">"naira mar"</a> first.</p>
+    </div>
+    <h5>thanks</h5>
+    
+    			<footer class="content-footer">
+    <div class="footer-container">
+    <p>Say hi to me on these social networks:</p>
+    
+    <a target="_blank" href="https://github.com/saahndongransom"><i class="fa fa-github-alt fa-inverse fa-2x"></i></a>
+    &nbsp;
+    <a href="https://twitter.com/SaahndongRansom"><i class="fa fa-twitter fa-inverse fa-2x"></i></a>
+    &nbsp;
+    <a href="https://www.linkedin.com/in/saahndong-ransom-7b3ba41b3/"><i class="fa fa-linkedin" style="font-size:48px;color:white;"></i></a> <br>
+<i class="fa fa-whatsapp" style="font-size:20px;color:white;">(+237)650473572</i>
+    
+    <p>Cover Image via <a href="#">Newhatch-tech Photography</a></p>
+</div>
+
+    		</article>
+    		
+    	</div>
+    	
+    </div>
+
+  
+  </footer>
+</body>
+</html>
+	
+			
+{% endblock content %}

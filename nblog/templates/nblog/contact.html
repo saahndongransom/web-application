@@ -1,0 +1,125 @@
+{% extends 'nblog/base.html'%}
+{% block content %}
+<style>
+  /* style.css */
+
+/* Reset some default form styles */
+form {
+  margin: 0;
+  padding: 0;
+}
+/* Apply the background image to the body */
+body {
+  background-image: url('https://i.pinimg.com/originals/58/19/24/5819245c2deaace4d0a5e18679d5f2a3.jpg');
+  background-size: cover;
+  background-position: center;
+}
+/* Style the contact form container */
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the form group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Style the form labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Style the form inputs */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style the submit button on hover */
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Optional: Style the form header */
+.contact-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+</style>
+  <div class="contact-form">
+    <h1>Contact Us</h1>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="name">Name:</label>
+        {{ form.name }}
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        {{ form.email }}
+      </div>
+      <div class="form-group">
+        <label for="phone-country">Country Code:</label>
+        {{ form.phone_country }}
+      </div>
+      <div class="form-group">
+        <label for="phone-area">Area Code:</label>
+        {{ form.phone_area }}
+      </div>
+      <div class="form-group">
+        <label for="phone-number">Phone Number:</label>
+        {{ form.phone_number }}
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        {{ form.message }}
+      </div>
+      <input type="submit" value="Send">
+    </form>
+  </div>
+  <script>
+    // script.js
+
+// Validate the form on submission
+function validateForm(event) {
+  const nameInput = document.getElementById('id_name');
+  const emailInput = document.getElementById('id_email');
+
+  // Simple validation example: Check if name and email fields are not empty
+  if (nameInput.value.trim() === '' || emailInput.value.trim() === '') {
+    alert('Name and Email are required fields.');
+    event.preventDefault(); // Prevent form submission
+  }
+}
+
+// Attach the form validation function to the form submission event
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('form');
+  form.addEventListener('submit', validateForm);
+});
+
+  </script>
+{% endblock content %}

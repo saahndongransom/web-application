@@ -1,0 +1,532 @@
+
+
+/* Style the  first section */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1529245019870-59b249281fd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YWZyaWNhbiUyMGFtZXJpY2FufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+  
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    transition: background-image 0.5s ease-in-out;
+}
+
+.hero:hover {
+    background-image: url(' https://images.unsplash.com/photo-1491911923017-19f90d8d7f83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHRlYW0lMjB3b3JrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+   
+}
+.hero  p {
+    color: darkgray;
+text-align: justify;
+font-size: 35px;
+text-align: center;
+}
+.hero h2 {
+color: darkgrey;
+font-size: 20px;
+
+
+}
+/* end of first section */
+
+
+/* Style the body */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Style the slideshow container */
+.slideshow {
+	position: relative;
+	height: 300px;
+}
+
+/* Style the slides */
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+/* Show the first slide */
+.slide:first-child {
+	opacity: 1;
+}
+
+/* Style the headings */
+h2 {
+	margin-top: 0;
+	text-align: center;
+	color: #555;
+}
+
+/* Style the paragraphs */
+p {
+	line-height: 1.5;
+	text-align: justify;
+	color: #777;
+  text-align: center;
+
+}
+
+/* Style the mission slide */
+.mission {
+	background-color: #f5f5f5;
+	text-align: center;
+  
+}
+
+/* Style the vision slide */
+.vision {
+	background-color: #ddd;
+}
+
+/* Style the goal slide */
+.goal {
+	background-color: #bbb;
+}
+
+
+/* Style the join section */
+
+
+
+.card-box {
+	background-color: #bbb;
+	color: white;
+	width: 400px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+	margin: 0 auto; /* Centering the card box horizontally */
+  }
+  
+  .card-box:hover {
+	background-color: whitesmoke;
+	cursor: pointer;
+  }
+  .card-box p{
+    font-size: 30px;
+  }
+
+  /* benefit */
+  .benefits-section {
+	background-color: #f2f2f2;
+	padding: 50px 0;
+    background-color: black;
+  }
+  
+  .benefits-section h2 {
+	text-align: center;
+	margin-bottom: 50px;
+    
+	
+  }
+  
+  .benefits-container {
+	display: flex;
+	justify-content: center;
+	
+	flex-wrap: wrap;
+	max-width: 1200px;
+	margin: 0 auto;
+	
+  }
+  
+  .benefit {
+	width: 300px;
+	margin: 20px;
+	padding: 30px;
+	text-align: center;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .benefit i {
+	font-size: 36px;
+	color: #ffcc00;
+	margin-bottom: 20px;
+  }
+  
+  .benefit h3 {
+	margin-bottom: 20px;
+  }
+  
+  .benefit p {
+	font-size: 14px;
+	line-height: 1.5;
+  }
+
+
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .slider-list {
+    display: flex;
+    width: 200%;
+    animation: slide 10s infinite;
+  }
+  
+  .slider-list li {
+    flex-basis: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .slider-list li:nth-child(odd) {
+    background-color: #f7f7f7;
+  }
+  
+  .slider-list li:nth-child(even) {
+    background-color: #e9e9e9;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-50%);
+    }
+    45% {
+      transform: translateX(-50%);
+    }
+    50% {
+      transform: translateX(-100%);
+    }
+    70% {
+      transform: translateX(-100%);
+    }
+    75% {
+      transform: translateX(-50%);
+    }
+    95% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+.stay-updated {
+padding: 20px;
+background-color: black;
+align-items: center;
+display: flex;
+flex-direction: column; / This makes the elements appear vertically */
+}
+
+.stay-updated h3 {
+font-size: 20px;
+margin-top: 0;
+color: darkgrey;
+}
+
+.stay-updated p {
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+.stay-updated form {
+align-items: center;
+margin-bottom: 10px; /* Adds some margin between the form and the paragraph */
+}
+
+.form-group {
+display: flex;
+flex-direction: column; /* set flex direction to column for vertical display /
+align-items: center; 
+}
+
+label {
+margin-right: 10px;
+margin-bottom: 10px; /* adds some margin between the label and input field */
+color:darkgray;
+}
+
+input[type="email"] {
+width: 100%;
+padding: 10px;
+border-radius: 5px 0 0 5px;
+border: none;
+margin-bottom: 10px; /* adds some margin between the input field and submit button */
+}
+
+button[type="submit"] {
+background-color: #2196f3;
+color: #fff;
+border-radius: 0 5px 5px 0;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+margin-bottom: 10px; /* adds some margin between the input field and submit button */
+}
+
+.stay-updated p:last-of-type {
+margin-top: 10px;
+font-size: 12px;
+}
+
+/* Styles for the "Social Links" section */
+
+.social-links {
+display: flex;
+flex-wrap: wrap; /* set flex-wrap to wrap to make it responsive for smaller screens */
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+background-color: black;
+color: #fff;
+}
+
+.logo {
+display: flex;
+align-items: center;
+margin-right: auto; 
+margin-bottom: 10px;
+}
+
+.logo img {
+height: 50px;
+margin-right: 10px;
+}
+
+.logo h3 {
+font-size: 30px;
+margin: 0;
+}
+
+.social-icons ul {
+list-style: none;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row; 
+padding: 0;
+font-size: 40px;
+justify-content: center; 
+}
+.social-icons li {
+margin-right: 10px;
+
+}
+
+.social-icons a {
+color: #fff;
+
+}
+
+.footer-links ul {
+list-style: none;
+display: flex;
+flex-direction: column; /* set flex direction to column for vertical display */
+margin: 10px;
+padding: 0;
+
+}
+
+.footer-links li {
+margin-bottom: 0px; /* adds some margin between the links */
+
+}
+
+.footer-links a {
+color: #fff;
+font-size: 20px;
+}
+
+.footer-links a:hover {
+text-decoration: underline;
+}
+
+.vertical-line {
+border-left: 1px solid white;
+height: 40px;
+margin: 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+/* Styles for smaller screens */
+.logo h3 {
+font-size: 25px;
+}
+.social-icons ul {
+font-size: 30px;
+}
+}
+.last-section {
+  text-align: center;
+  background-color: black;
+  padding: 20px;
+  }
+  
+  .last-section p {
+  color: white;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+  }
+  
+
+  
+  
+  
+  
+  
+  
+
+#navbarResponsive {
+  justify-content: flex-end !important;
+}
+
+.navbar-dark {
+  background-color: black !important;
+}
+
+.navbar-nav {
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.nav-item {
+  margin-left: 20px !important;
+}
+
+.nav-link {
+  display: inline-block !important;
+  color: white !important;
+}
+.custom-nav {
+  height: 50px;
+  line-height: 50px;
+}
+
+
+.project img {
+  width: 100%;
+  height: 200px; /* or any other fixed height that you want */
+  object-fit: cover;
+}
+
+
+.ransom {
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.ransom h2 {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.ransom p {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.slider-list li {
+  font-size: 24px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.slider-list li:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+
+.slider-list li.active {
+  animation-name: bounce;
+  animation-duration: 0.12s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slideshow {
+  position: relative;
+}
+.slideshow .mySlides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slideshow .mySlides:first-child {
+  opacity: 1;
+}
+.slideshow .mySlides.active {
+  opacity: 1;
+}
+@keyframes slideshow {
+  0% {
+      opacity: 0;
+  }
+  20% {
+      opacity: 1;
+  }
+  80% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+
+
+
+
+
+

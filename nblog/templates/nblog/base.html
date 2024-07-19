@@ -1,0 +1,291 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <title>trillumize communities blog</title>
+    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYTufuIudqFAfMfAHH78qneRC2ORc2GEKS4hMc1xPL&s">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap cdn -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Add any additional styles here */
+  </style>
+   <link rel="stylesheet"  href="{%  static  'css/.css'  %}">
+   
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/b2c8738cb5f7aeb6eb02a49fb/7219a2039b91ec79f99a9fd2f.js");</script>
+     
+   <style>
+    /* Add any additional styles here */
+  </style>
+   <link rel="stylesheet"  href="{%  static  'css/.css'  %}">
+   <style>
+  #post-slideshow {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .post-slide {
+    position: relative;
+    height: 400px; /* Adjust the height as needed */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .post-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .slide-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .slide-content p {
+    font-size: 16px;
+  }
+
+  .slide-content a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .slide-content a:hover {
+    background-color: #0056b3;
+  }
+
+  .slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 20px;
+  }
+
+  .next {
+    right: 20px;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .slide-content {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .slide-content h2 {
+      font-size: 20px;
+    }
+
+    .slide-content p {
+      font-size: 14px;
+    }
+
+    .slide-content a {
+      padding: 6px 12px;
+    }
+
+    .slide-btn {
+      font-size: 24px;
+    }
+  }
+</style>
+
+  <style>
+  
+
+    .category-count {
+        color: #999;
+        font-size: 20px;
+        margin-left: 5px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .list-inline-item a {
+        font-size: 25px;
+        color: aliceblue;
+    }
+
+   .category-box {
+  height: 100px; /* Adjust the height as needed */
+}
+
+
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .post-slide h2 {
+            font-size: 24px;
+        }
+
+        .post-slide p {
+            font-size: 20px;
+        }
+
+        .list-inline-item a {
+            font-size: 20px;
+        }
+
+        .category-box {
+            margin-bottom: 0;
+        }
+    }
+  </style>
+</head>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="mainNav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">🌐 TRILLUMIZE TECH 🌐</a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">
+              <i class="fa fa-home" style="font-size:24px"></i>
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'aboutme' %}"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'mission' %}">about us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'policy' %}">Policy</a> 
+          </li>          
+        </ul>
+      </div> 
+    </div>
+  </nav>
+  
+ 
+
+
+<body>
+<div id="post-slideshow">
+  {% for post in featured_posts %}
+    <div class="post-slide">
+      <img src="{{ post.image_url }}" alt="Slide Image">
+      <div class="slide-content">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content|truncatewords:30|safe }}</p>
+        <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('#post-slideshow').slick({
+      dots: false,
+      arrows: true,
+      prevArrow: '<a class="slide-btn prev">&#10094;</a>',
+      nextArrow: '<a class="slide-btn next">&#10095;</a>',
+      autoplay: true,
+      autoplaySpeed: 3000,
+      pauseOnHover: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+
+
+<div class="container">
+  <div class="category-box">
+    <div class="text-center">
+      <ul class="list-inline">
+        {% for category in categories %}
+          <li class="list-inline-item">
+            <a href="{% url 'category' slug=category.name %}">{{ category.name }}</a>
+
+            <span class="category-count">{{ category.post_set.count }}</span>
+          </li>
+        {% empty %}
+          <li class="list-inline-item"></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+<!-- Your remaining HTML code -->
+
+  
+
+ 
+    </main>
+  {% block content %}
+  {% endblock content %}
+</body>
+{% include 'nblog/footer.html' %}
+</html>
+
+
+
